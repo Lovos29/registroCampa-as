@@ -1,0 +1,249 @@
+<div class="container">
+    <div class="starter-template"> 
+
+        <!--   <div class="row">
+            <div class="col-md-12 mt-5">
+                <div class="card card-body">
+                    <form>
+                        <div class="card card-body">
+                            <div class=" form-group">
+
+                                <label for="Envio_Correos">
+                                    <h5 class="fw-bold">Empresas a enviar campaña</h5>
+                                </label>
+                                <select class="form-control" name="selectedEmpresas" id="selectedEmpresas"
+                                    [(ngModel)]="selectedEmpresas" multiple="selectedEmpresas">
+
+                                    <option selected [value]="empresas" *ngFor="let empresas of empresass">
+                                        {{empresas}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <h5 class="fw-bold "> Campaña</h5>
+                                </label><br>
+                                <input type="text" name="campaings" [(ngModel)]="campaigns.name_campaigns"
+                                    formControlName="campaings" class="form-control" placeholder=" Nombre de la campaña"
+                                    autofocus [class.is-invalid]="f.campaings.errors && f.campaings.touched" />
+                                <div id="validationServerCampaingsFeedback" class="invalid-feedback">
+                                    Nombre de Campaña es obligatorio
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <h5 class="fw-bold ">Codigo de Plantilla</h5>
+                                </label>
+                                <input type="number" name="id_plantilla" [(ngModel)]="campaigns.id_plantilla"
+                                    formControlName="id_plantilla"
+                                    [class.is-invalid]="f.id_plantilla.errors && f.id_plantilla.touched"
+                                    class="form-control" required />
+                                <div id="validationServerid_plantillaFeedback" class="invalid-feedback">
+                                    codigo de Plantilla es obligatorio
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <h5 class="fw-bold ">Fecha inicio</h5>
+                                </label><br>
+                                <input type="date" name="date_start" [(ngModel)]="campaigns.fecha_inicio"
+                                    class=" form-control" placeholder="AAA-MM-DD" formControlName="date_start"
+                                    [class.is-invalid]="f.date_start.errors && f.date_start.touched"
+                                    class="form-control" required />
+                                <div id="validationServerDate_startFeedback" class="invalid-feedback">
+                                    Nombre de Campaña es obligatorio
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <h5 class="fw-bold ">Fecha Fin</h5>
+                                </label><br>
+                                <input type="date" name="date_finally" [(ngModel)]="campaigns.fecha_fin"
+                                    class=" form-control" placeholder="AAA-MM-DD" formControlName="date_finally"
+                                    [class.is-invalid]="f.date_finally.errors && f.date_finally.touched"
+                                    class="form-control" />
+                                <div id="validationServerDate_finallyFeedback" class="invalid-feedback">
+                                    Nombre de Campaña es obligatorio
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <h5 class="fw-bold "> Estado</h5>
+                                </label><br>
+                                <select class="form-control" name="selectedEstado" id="selectedEstado"
+                                    [(ngModel)]="campaigns.status" formControlName="selectedEstado"
+                                    [class.is-invalid]="f.selectedEstado.errors && f.selectedEstado.touched"
+                                    class="form-control">
+                                    <option selected [value]="estado" *ngFor="let estado of estados">
+                                        {{estado}}
+                                    </option>
+                                </select>
+                                <div id="validationServerSelectedEstadoFeedback" class="invalid-feedback">
+                                    Estado de Campaña es obligatorio
+                                </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <button type="button" class="btn btn-primary"
+                                    (click)="submitCampanigns()">Guardar</button>
+                                (click)="submitCampanigns()"  (click)="getDataCliente()"
+                            </div>
+                            <div class="mb-3 form-check">
+                                <button type="button" class="btn btn-primary" (click)="getDataCliente()">Enviar
+                                    correos</button>
+                                (click)="submitCampanigns()"  (click)="getDataCliente()"
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div> -->
+
+        <!-- <div class="row">
+            <div class="col-md-12 mt-5">
+                <form [formGroup]="contacto" (ngSubmit)="submitFormulario()">
+                    <div class="form-group">
+                        <label> Nombres y apellidos </label>
+                        <input type="text" formControlName="username" class="form-control"
+                        [class.is-invalid]="f.username.errors && f.username.touched" />
+                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                           Nombre obligatorio
+                          </div> 
+                    </div>
+                    <div class="form-group">
+                        <label> Email </label>
+                        <input type="text" formControlName="email" class="form-control"
+                            [ngClass]="{'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required"> El email es obligatorio</div>
+                            <div *ngIf="f.email.errors.email"> Por favor, ingresar tu email </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label> Asunto </label>
+                        <input type="text" formControlName="asunto" class="form-control"
+                            [ngClass]="{'is-invalid': submitted && f.asunto.errors }" />
+                        <div *ngIf="submitted && f.asunto.errors" class="invalid-feedback">
+                            <div *ngIf="f.asunto.errors.required"> El asunto es obligatorio</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postre"> Postre </label>
+                        <select formControlName="postre" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.postre.errors }" >
+                        <option value=""> Seleccionar</option>
+                        <option value="Crema Volteada"></option>
+                        <option value="Crema salteada"></option>
+                        </select>
+                        <input  />
+                        <div *ngIf="submitted && f.postre.errors" class="invalid-feedback">
+                            <div *ngIf="f.postre.errors.required"> Favor seleccionar el postre</div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="mensaje"> Mensaje </label>
+                        <textarea formControlName="mensaje" class="form-control" rows="3"
+                        [ngClass]="{ 'is-invalid': submitted && f.mensaje.errors }" ></textarea>
+                        <div *ngIf="submitted && f.mensaje.errors" class="invalid-feedback">
+                            <div *ngIf="f.mensaje.errors.required"> Favor seleccionar el postre</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Aceptar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    -->
+        <div class="row g-3"> 
+            <div class="col-xs-12 col-md-12">
+                <h2 class="fw-bold text-center" style="color: #034b80;">Registro de campaña para cumpleañeros</h2><br>
+                <form class="row g-3">
+                    <div class="col-md-6">  
+                        <div class="card card-body">
+                            <div class=" form-group">
+
+                                <label for="Envio_Correos">
+                                    <h5 class="fw-bold" style="color: #0c957e;" >Empresas a enviar campaña</h5><br>
+                                </label>
+                                <select class="form-control" name="selectedEmpresas" id="selectedEmpresas"
+                                    [(ngModel)]="selectedEmpresas" multiple="selectedEmpresas">
+
+                                    <option selected [value]="empresas" *ngFor="let empresas of empresass">
+                                        {{empresas}}
+                                    </option>
+                                </select>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>
+                                    <h5 class="fw-bold"style="color: #0c957e;">Campaña
+                                    </h5>
+                                </label><br>
+                                <input type="text" name="campaings" readonly [(ngModel)]="campaigns.name_campaigns"
+                                    class="form-control" placeholder=" Nombre de la campaña" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <h5 class="fw-bold"style="color: #0c957e;">Codigo de Plantilla
+                                    </h5>
+                                </label>
+                                <input type="number" name="id_plantilla" [(ngModel)]="campaigns.id_plantilla"
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-body">
+                            <div class="form-group">
+                                <label>
+                                    <h5 class="fw-bold"style="color: #0c957e;">Fecha inicio
+                                    </h5>
+                                </label><br>
+                                <input type="date" name="date_start" [(ngModel)]="campaigns.fecha_inicio"
+                                    class=" form-control" placeholder="AAA-MM-DD">
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <h5 class="fw-bold"style="color: #0c957e;">Fecha Fin
+                                    </h5>
+                                </label><br>
+                                <input type="date" name="date_finally" [(ngModel)]="campaigns.fecha_fin"
+                                    class=" form-control" placeholder="AAA-MM-DD">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 col-form-label col-form-label-sm">
+                                    <h5 class="fw-bold"style="color: #0c957e;"> Estado
+                                    </h5>
+                                </label><br>
+                                <select class="form-control" name="selectedEstado" id="selectedEstado"
+                                    [(ngModel)]="campaigns.status">
+
+                                    <option selected [value]="estado" *ngFor="let estado of estados">
+                                        {{estado}}
+                                    </option>
+                                </select>
+                            </div>
+
+
+
+                            <div class="mb-3 form-check">
+                                <button type="button" class="btn btn-primary " style="margin-bottom: 10px"
+                                    (click)="submitCampanigns()">Registrar Campaña</button>
+                                <!--(click)="getDataCliente()"  -->
+                                <button type="button" class="btn btn-danger " style="margin-bottom: 10px"
+                                     (click)="submitCampanigns()" (click)="getDataCliente()">Enviar y Registrar Campaña</button>
+                                <!--(click)="getDataCliente()"  -->
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>

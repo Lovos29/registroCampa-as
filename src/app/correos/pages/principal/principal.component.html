@@ -1,0 +1,98 @@
+
+<!--
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand"><h4 class="fw-bold">Email Marketing</h4></a>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        Este codifgo v OCULTO <img src=" /assets/icons/enviar.png" alt="whatsapp" width="40" height="40">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="BirthDayComponent" routerLinkActive="active"><img
+              src="/assets/icons/happy-birthday.png" alt="film" width="40" height="40">Campaña Cumpleañero</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="notifications-events" routerLinkActive="active"><img
+              src="/assets/icons/notificacion.png" alt="film" width="40" height="40">Campaña notificacion eventos</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="delinquent-customer-reminder" routerLinkActive="active"><img
+              src="/assets/icons/atrasado.png" alt="film" width="40" height="40">Campaña cartera en mora</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="payment-reminder" routerLinkActive="active"><img
+              src="/assets/icons/clientes-al-dia.jpg" alt="film" width="40" height="40">Campaña de cartera al dia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="Aniversario Fallecidos" routerLinkActive="active"><img src="/assets/icons/clientes-al-dia.jpg" 
+            alt="film" width="40" height="40">Aniversario de fallecidos</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>-->
+<!--
+<div class="card card-body">
+  <div *ngFor="let campaignss of campaignsMostrar" class="card card-body mb-2">
+    <div class="row">
+      <div class="cold-md-8">
+        <ul>
+          <li>
+            ID: {{campaignss.idcampaigns}}
+          </li>
+          <li>
+            Campaña: {{campaignss.name_campaigns}}
+          </li>
+          <li>
+            Empresa: {{campaignss.business}}
+          </li>
+          <li>
+            Fecha Inicio de Campaña: {{campaignss.fecha_inicio}}
+          </li>
+          <li>
+            Fecha Fi de Camapaña: {{campaignss.fecha_fin}}
+          </li>
+        </ul>
+        <button class=" btn btn-secondary" [routerLink]="['BirthDayComponent/edit/',campaignss.idcampaigns]">
+          Update</button>
+      </div>
+    </div>
+
+  </div>
+</div>-->
+
+<div class="container">
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-striped table-bordered row-border hover">
+  <thead class="table " style="background-color: #034b80;">
+    <tr style="color: white; text-align: center;"  >
+      <th style="text-align: center;" >ID</th>
+      <th style="text-align: center;" >Campaña</th>
+      <th style="text-align: center;"  >Plantilla</th>
+      <th style="text-align: center;" >Empresa</th>
+      <th style="text-align: center;"  >Inicia</th>
+      <th style="text-align: center;" >Finaliza</th>
+      <th style="text-align: center;"  >Mora</th> 
+      <th style="text-align: center;" >Estado</th>
+      <th style="text-align: center;" >Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let campaignss of campaignsMostrar">
+      <td>{{ campaignss.id}} </td>
+      <td>{{ campaignss.name_campaigns }} </td>
+      <td>{{ campaignss.id_plantilla }}</td>
+      <td>{{ campaignss.business}}</td>
+      <td>{{ campaignss.fecha_inicio}}</td>
+      <td>{{ campaignss.fecha_fin}}</td>
+      <td>{{ campaignss.tipo_mora}}</td>
+      <td>{{ campaignss.status}}</td>
+      <td><button [routerLink]="['/Principal/Actualizar-Registro/edit', campaignss.id]" routerLinkActive="active" class="btn btn-sm btn-success">Editar</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>

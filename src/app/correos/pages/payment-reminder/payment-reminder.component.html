@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="starter-template">
+        <div class="row g-3">
+            <div class="col-xs-12 col-md-12">
+                <h2 class="fw-bold text-center" style="color: #034b80;">Registro de campaña para recordatorio de pago</h2>
+                <br>
+                <form class="row g-3">
+                    <div class="col-md-6">
+
+                        <div class="card card-body">
+                            <div class=" form-group">
+
+                                <label for="Envio_Correos">
+                                    <h5 class="fw-bold" style="color: #0c957e;">Empresas a enviar campaña</h5><br>
+                                </label>
+                                <select class="form-control" name="selectedEmpresas" id="selectedEmpresas"
+                                    [(ngModel)]="selectedEmpresas" multiple="selectedEmpresas">
+
+                                    <option selected [value]="empresas" *ngFor="let empresas of empresass">
+                                        {{empresas}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <h5 class="fw-bold" style="color: #0c957e;">Campaña </h5>
+                                </label><br>
+                                <input type="text" name="campaings" readonly [(ngModel)]="campaigns.name_campaigns"
+                                    class="form-control" placeholder=" Nombre de la campaña" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label >
+                                    <h5 class="fw-bold" style="color: #0c957e;">Codigo de Plantilla</h5>
+                                </label>
+                                <input type="number" name="id_plantilla" [(ngModel)]="campaigns.id_plantilla"
+                                    class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-body">
+
+                            <div class="form-group">
+                                <label>
+                                    <h5 class="fw-bold" style="color: #0c957e;">Fecha inicio</h5>
+                                </label><br>
+                                <input type="date" name="date_start" [(ngModel)]="campaigns.fecha_inicio"
+                                    class=" form-control" placeholder="AAA-MM-DD">
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <h5 class="fw-bold" style="color: #0c957e;">Fecha Fin</h5>
+                                </label><br>
+                                <input type="date" name="date_finally" [(ngModel)]="campaigns.fecha_fin"
+                                    class=" form-control" placeholder="AAA-MM-DD">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-form-label col-form-label-sm">
+                                    <h5 class="fw-bold" style="color: #0c957e;">Estado</h5>
+                                </label><br>
+                                <select class="form-control" name="selectedEstado" id="selectedEstado"
+                                    [(ngModel)]="campaigns.status">
+    
+                                    <option selected [value]="estado" *ngFor="let estado of estados">
+                                        {{estado}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <button type="button" class="btn btn-primary" style="margin-bottom:10px"
+                                    (click)="submitCampanigns()">Registrar Campaña</button>
+                                <!--(click)="getDataCliente()"  (click)="submitCampanigns()"-->
+                                <button type="button" class="btn btn-danger" style="margin-bottom: 10px"
+                                    (click)="getDataCliente()" (click)="submitCampanigns()">Enviar y Registrar Campaña</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>

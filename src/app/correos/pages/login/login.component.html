@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-md-4">
+      <div class="card card-body">
+        <h2 class="fw-bold text-center" style="color: #034b80;">Bienvenido</h2>
+       <img src="assets/icons/GR-L.png"  > 
+        <form [formGroup]="myform" (ngSubmit)="submitFormulario()">
+          <div class="mb-15">
+            <label for="usuario" class="form-label fw-bold">Email</label>
+            <input type="text" formControlName="username" [class.is-invalid]="f.username.errors && f.username.touched"
+              class="form-control" placeholder="Ingresa tu usuario">
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+              Usuario obligatorio
+            </div>
+          </div>
+          <div class="mb-15">
+            <label for="password" class="form-label fw-bold">Contraseña</label>
+            <input type="password" formControlName="password"
+              [class.is-invalid]="f.password.errors && f.password.touched" class="form-control"
+              placeholder="Ingresa tu Contraseña">
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+              Constraseña obligatoria
+            </div>
+          </div>
+
+          <div class="d-grid">
+            <button class="btn btn-success">Ingresar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!--
+<div class="container">
+  <div class="container mt-5 rounded shadow">
+    <div class="row">
+      
+      <div class="col-sm-4 offset-mb-4 bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6">
+
+      </div>
+      <div class="col-sm-4 bg-white p-5 rounded-end">
+        <h1 class="fw-bold text-center" style="color: #034b80;">Bienvenido</h1>
+        <form [formGroup]="myform" (ngSubmit)="submitFormulario()">
+          <div class="mb-4">
+            <label for="usuario" class="form-label fw-bold" style="color: #0c957e;">Email</label>
+            <input type="text" formControlName="username" [class.is-invalid]="f.username.errors && f.username.touched"
+              class="form-control" placeholder="Ingresa tu usuario">
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+              Usuario obligatorio
+            </div>
+          </div>
+          <div class="mb-4">
+            <label for="password" class="form-label fw-bold" style="color: #0c957e;">Contraseña</label>
+            <input type="password" formControlName="password"
+              [class.is-invalid]="f.password.errors && f.password.touched" class="form-control"
+              placeholder="Ingresa tu Contraseña">
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+              Constraseña obligatoria
+            </div>
+          </div>
+
+          <div class="d-grid">
+           ////   <button class="btn btn-outline-success">Ingresar</button>
+            <button class="btn btn-success">Ingresar</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>-->

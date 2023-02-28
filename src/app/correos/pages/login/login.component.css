@@ -1,0 +1,13 @@
+.bg{
+
+    background-image: url(/assets/icons/GR-L.png);
+    background-position: center;
+   
+}
+
+img {
+    
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+  }

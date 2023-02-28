@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+
+    background-color: whitesmoke;
+}
+
+div{
+    padding: 8px;
+}
+
+input {
+    margin-left: 10px;
+}
+
+ textarea{
+
+    margin-left: 10px;
+    
+ }
+img {
+     margin-left: 10px;
+}
+
+.small-picture{
+    width: 50px;
+}
+.medium-picture {
+    width: 150px;
+}
+
+.large-picture {
+    width: 300px;
+
+}
